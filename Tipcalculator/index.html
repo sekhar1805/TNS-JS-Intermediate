@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calculator</title>
+  </head>
+  <body>
+    <h1 id="totalamount"></h1>
+    <script>
+      // Prompt the user for input
+      const billAmount = parseFloat(prompt("Enter the total bill amount:"));
+      const serviceQuality = parseInt(
+        prompt("Enter the level of satisfaction (1-5):")
+      );
+      const numPeople = parseInt(prompt("Enter the number of people:"));
+
+      // Validate the input
+      if (isNaN(billAmount) || isNaN(serviceQuality) || isNaN(numPeople)) {
+        console.log("Invalid input. Please enter valid numbers.");
+      } else if (serviceQuality < 1 || serviceQuality > 5 || numPeople < 1) {
+        console.log(
+          "Invalid input. Service quality should be between 1 and 5, and the number of people should be at least 1."
+        );
+      } else {
+        // Calculate the tip per person
+        const tipPerPerson = (billAmount * (serviceQuality / 100)) / numPeople;
+
+        // Calculate the total tip
+        const totalTip = tipPerPerson * numPeople;
+
+        console.log("Total tip amount: $" + totalTip.toFixed(2));
+        document.getElementById(
+          "totalamount"
+        ).textContent = `Total tip amount: $ ${totalTip.toFixed(2)}`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selection of elements</title>
+  </head>
+  <body>
+    <h1 id="domainPreference">Domain Preference</h1>
+    <h1 class="education">Education</h1>
+    <h1>
+      <ul>
+        <li>Item - 1</li>
+        <li>Item - 2</li>
+        <li>Item - 3</li>
+      </ul>
+    </h1>
+    <script>
+      const domainPreferenceElement =
+        document.querySelector("#domainPreference");
+      const educationElement = document.querySelector(".education");
+      const itemsElements = document.querySelectorAll("li");
+    </script>
+  </body>
+</html>
